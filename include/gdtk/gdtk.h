@@ -5,10 +5,10 @@
 #ifndef GDTK_H
 #define GDTK_H
 
+#include "gdtk/core/defines.h"
 #include "gdtk/platform/app.h"
 #include "gdtk/platform/events.h"
 #include "gdtk/platform/log.h"
-#include "gdtk/platform/types.h"
 
 typedef enum
 {
@@ -16,7 +16,6 @@ typedef enum
   GDTK_APP_SUCCESS,
   GDTK_APP_FAILURE,
 } GDTK_AppResult;
-
 
 extern GDTK_AppResult
 gdtk_startup(void** gdtk_state, int argc, char* argv[]);

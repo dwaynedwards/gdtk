@@ -2,14 +2,18 @@
 // Created by Dwayne Edwards on 2026-06-20.
 //
 
-
 #include "gdtk/gdtk.h"
 
 #include <SDL3/SDL_main.h>
 #include <SDL3/SDL_timer.h>
 
-#include "gdtk/platform/errors.h"
-#include "gdtk/platform/log.h"
+#define SDL_CHECK(x)                                                                                                   \
+  ({                                                                                                                   \
+    s32 result = (!(x));                                                                                               \
+    b8 r = result == 0;                                                                                                \
+    if (!r) LOG_ERROR("Error: %s", SDL_GetError());                                                                    \
+    r;                                                                                                                 \
+  })
 
 #ifndef GDTK_LOG_PRIORITY
 #define GDTK_LOG_PRIORITY GDTK_LOG_PRIORITY_ERROR
@@ -22,7 +26,7 @@ log_init();
 void
 set_log_priority(GDTK_LogPriority priority);
 
-static bool pause_rendering;
+static b8 pause_rendering;
 
 SDL_AppResult
 SDL_AppInit(void** appstate, int argc, char* argv[])

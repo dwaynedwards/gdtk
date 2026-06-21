@@ -6,7 +6,7 @@
 
 #include <SDL3/SDL_log.h>
 
-#include "gdtk/platform/types.h"
+#include "gdtk/core/defines.h"
 
 void
 set_log_priority(const GDTK_LogPriority priority)
@@ -15,7 +15,7 @@ set_log_priority(const GDTK_LogPriority priority)
 }
 
 static const char*
-get_priority_string(const SDL_LogPriority priority)
+internal_get_priority_string(const SDL_LogPriority priority)
 {
   switch (priority)
   {
@@ -30,15 +30,15 @@ get_priority_string(const SDL_LogPriority priority)
 }
 
 static void
-log_message_callback(void* userdata, S32 category, const SDL_LogPriority priority, const char* message)
+internal_log_message_callback(void* userdata, s32 category, const SDL_LogPriority priority, const char* message)
 {
-  printf("[%s] %s\n", get_priority_string(priority), message);
+  printf("[%s] %s\n", internal_get_priority_string(priority), message);
 }
 
 void
 log_init()
 {
-  SDL_SetLogOutputFunction(log_message_callback, NULL);
+  SDL_SetLogOutputFunction(internal_log_message_callback, NULL);
 }
 
 void

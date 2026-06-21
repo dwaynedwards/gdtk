@@ -5,7 +5,6 @@
 #ifndef GDTK_LOG_H
 #define GDTK_LOG_H
 
-
 typedef enum GDTK_LogPriority
 {
   GDTK_LOG_PRIORITY_INVALID,
@@ -22,7 +21,6 @@ typedef enum GDTK_LogPriority
 
 #define STR(x) #x
 #define TO_STR(x) STR(x)
-
 
 #define LOG(priority, fmt, ...) log_message(priority, fmt " | " __FILE__ ":" TO_STR(__LINE__), ##__VA_ARGS__)
 

@@ -5,15 +5,16 @@
 #ifndef GDTK_RENDERER_H
 #define GDTK_RENDERER_H
 
+#include "gdtk/core/defines.h"
 
 struct GDTK_Config;
 
-typedef struct GDTK_Renderer GDTK_Renderer;
+struct GDTK_Renderer;
 
-GDTK_Renderer*
+struct GDTK_Renderer*
 renderer_create(const struct GDTK_Config* cfg);
 
 void
-renderer_destroy(GDTK_Renderer* renderer);
+renderer_destroy(struct GDTK_Renderer* renderer);
 
 #endif // GDTK_RENDERER_H

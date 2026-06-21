@@ -5,14 +5,12 @@
 #ifndef GDTK_APP_H
 #define GDTK_APP_H
 
-
-#include "types.h"
-
+#include "gdtk/core/types/vector.h"
 
 typedef struct GDTK_Config
 {
   const char* title;
-  SVec2 dimensions;
+  sVec2 dimensions;
 } GDTK_Config;
 
 typedef struct GDTK_App GDTK_App;

@@ -11,7 +11,7 @@
 
 struct GDTK_App
 {
-  GDTK_Renderer* renderer;
+  struct GDTK_Renderer* renderer;
 };
 
 GDTK_App*

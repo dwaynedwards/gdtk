@@ -1,8 +1,7 @@
-# GDTK
+# GDTK Engine
 
 ## Game Developer Toolkit Engine - For Game Development in C
 
 > **NOTE:**
 >
-> Primary development is on MACOS
-
+> Development is on macOS Apple Silicon
