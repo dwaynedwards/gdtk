@@ -24,8 +24,7 @@ typedef enum GDTK_LogPriority
 #define TO_STR(x) STR(x)
 
 
-#define LOG(priority, fmt, ...)                                                                                    \
-  log_message(priority, fmt " | " __FILE__ ":" TO_STR(__LINE__), ##__VA_ARGS__)
+#define LOG(priority, fmt, ...) log_message(priority, fmt " | " __FILE__ ":" TO_STR(__LINE__), ##__VA_ARGS__)
 
 #define LOG_DEBUG(fmt, ...) LOG(GDTK_LOG_PRIORITY_DEBUG, fmt, ##__VA_ARGS__)
 

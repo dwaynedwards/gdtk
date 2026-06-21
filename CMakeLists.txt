@@ -40,3 +40,16 @@ target_compile_definitions(${CMAKE_PROJECT_NAME} PUBLIC
         SDL_MAIN_USE_CALLBACKS)
 target_link_libraries(${CMAKE_PROJECT_NAME} PUBLIC
         SDL3::SDL3)
+
+# vulkan
+
+find_package(Vulkan REQUIRED)
+target_link_libraries(${CMAKE_PROJECT_NAME} PUBLIC
+        Vulkan::Vulkan)
+
+# volk
+# https://github.com/zeux/volk.git
+
+add_subdirectory(vendor/volk)
+target_link_libraries(${CMAKE_PROJECT_NAME}  PUBLIC
+        volk)

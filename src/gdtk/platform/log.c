@@ -14,7 +14,7 @@ set_log_priority(const GDTK_LogPriority priority)
   SDL_SetLogPriority(SDL_LOG_CATEGORY_CUSTOM, (SDL_LogPriority)priority);
 }
 
-const char*
+static const char*
 get_priority_string(const SDL_LogPriority priority)
 {
   switch (priority)
@@ -29,7 +29,7 @@ get_priority_string(const SDL_LogPriority priority)
   }
 }
 
-void
+static void
 log_message_callback(void* userdata, S32 category, const SDL_LogPriority priority, const char* message)
 {
   printf("[%s] %s\n", get_priority_string(priority), message);
@@ -46,6 +46,6 @@ log_message(const GDTK_LogPriority priority, const char* fmt, ...)
 {
   va_list args;
   va_start(args, fmt);
-  SDL_LogMessage(SDL_LOG_CATEGORY_CUSTOM, (SDL_LogPriority)priority, fmt, args);
+  SDL_LogMessageV(SDL_LOG_CATEGORY_CUSTOM, (SDL_LogPriority)priority, fmt, args);
   va_end(args);
 }

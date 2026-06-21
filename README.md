@@ -1,2 +1,8 @@
-# gdtk
-Game Developer Toolkit - For Game Development in C
+# GDTK
+
+## Game Developer Toolkit Engine - For Game Development in C
+
+> **NOTE:**
+>
+> Primary development is on MACOS
+

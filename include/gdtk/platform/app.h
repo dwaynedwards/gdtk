@@ -9,21 +9,18 @@
 #include "types.h"
 
 
-typedef struct
+typedef struct GDTK_Config
 {
   const char* title;
   SVec2 dimensions;
 } GDTK_Config;
 
-typedef struct
-{
-  void* handle;
-} GDTK_App;
+typedef struct GDTK_App GDTK_App;
 
 GDTK_App*
 app_create(const GDTK_Config* cfg);
 
 void
-app_destroy(GDTK_App* ctx);
+app_destroy(GDTK_App* app);
 
 #endif // GDTK_APP_H

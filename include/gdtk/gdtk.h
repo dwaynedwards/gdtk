@@ -7,8 +7,8 @@
 
 #include "gdtk/platform/app.h"
 #include "gdtk/platform/events.h"
-#include "platform/log.h"
-#include "platform/types.h"
+#include "gdtk/platform/log.h"
+#include "gdtk/platform/types.h"
 
 typedef enum
 {
@@ -20,10 +20,13 @@ typedef enum
 
 extern GDTK_AppResult
 gdtk_startup(void** gdtk_state, int argc, char* argv[]);
+
 extern GDTK_AppResult
 gdtk_events(void* gdtk_state, const GDTK_Event* events);
+
 extern GDTK_AppResult
 gdtk_iterate(void* gdtk_state);
+
 extern void
 gdtk_shutdown(void* gdtk_state, GDTK_AppResult result);
 
